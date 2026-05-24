@@ -1,0 +1,1 @@
+timestamp,implementation,config,test_file,file_size_bytes,compressed_size_bytes,compression_ratio,compression_time_s,decompression_time_s,compress_throughput_mbps,decompress_throughput_mbps,accuracy_percent,rmse

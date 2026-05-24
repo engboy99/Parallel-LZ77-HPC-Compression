@@ -1,0 +1,34 @@
+Script started on 2026-05-23 20:05:07+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mls -lh datasets[27mls -lh datasets
+[?2004ltotal 0
+drwxrwxrwx 1 prabhath prabhath 4.0K May 23 19:52 [0m[34;42mtest_files[0m
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mls -lh scripts/datasets/test_files[27mls -lh scripts/datasets/test_files
+[?2004ltotal 59M
+-rwxrwxrwx 1 prabhath prabhath 9.6M May 23 19:51 [0m[01;32mtest_10mb.txt[0m
+-rwxrwxrwx 1 prabhath prabhath 977K May 23 19:51 [01;32mtest_1mb.txt[0m
+-rwxrwxrwx 1 prabhath prabhath  48M May 23 19:51 [01;32mtest_50mb.txt[0m
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mcat test_results_20260523_195458.csv[27mcat test_results_20260523_195458.csv
+[?2004ltimestamp,implementation,config,test_file,file_size_bytes,compressed_size_bytes,compression_ratio,compression_time_s,decompression_time_s,compress_throughput_mbps,decompress_throughput_mbps,accuracy_percent,rmse
+2026-05-23T19:55:00,serial,serial,test_1mb.txt,1000000,23206,43.0923,1.918097,FAILED,0.4972,0,0,9999.0000
+2026-05-23T19:55:02,openmp,threads=4,test_1mb.txt,1000000,23206,43.0923,1.656172,FAILED,0.5758,0,0,9999.0000
+2026-05-23T19:55:04,openmp,threads=8,test_1mb.txt,1000000,23206,43.0923,1.588404,0.079503,0.6004,11.9955,100.0000,0.0000
+2026-05-23T19:55:06,openmp,threads=16,test_1mb.txt,1000000,23206,43.0923,1.523765,FAILED,0.6259,0,0,9999.0000
+2026-05-23T19:55:08,pthread,threads=4,test_1mb.txt,1000000,23206,43.0923,1.936633,0.029953,0.4924,31.8390,100.0000,0.0000
+2026-05-23T19:55:10,pthread,threads=8,test_1mb.txt,1000000,23206,43.0923,1.900915,0.028357,0.5017,33.6310,100.0000,0.0000
+2026-05-23T19:55:16,pthread,threads=16,test_1mb.txt,1000000,23206,43.0923,4.746593,0.030183,0.2009,31.5964,100.0000,0.0000
+2026-05-23T19:55:18,mpi,procs=2,test_1mb.txt,1000000,23212,43.0812,1.695302,0.027958,0.5625,34.1110,100.0000,0.0000
+2026-05-23T19:55:19,mpi,procs=4,test_1mb.txt,1000000,23224,43.0589,1.315690,0.029721,0.7248,32.0876,100.0000,0.0000
+2026-05-23T19:55:19,mpi,procs=8,test_1mb.txt,1000000,0,0,FAILED,FAILED,0,0,0,9999.0000
+2026-05-23T19:55:21,mpi_openmp,procs=2,threads=4,test_1mb.txt,1000000,23224,43.0589,1.146641,FAILED,0.8317,0,0,9999.0000
+2026-05-23T19:55:22,mpi_openmp,procs=4,threads=2,test_1mb.txt,1000000,23224,43.0589,1.287210,FAILED,0.7409,0,0,9999.0000
+2026-05-23T19:55:24,mpi_openmp,procs=4,threads=4,test_1mb.txt,1000000,23224,43.0589,1.224857,FAILED,0.7786,0,0,9999.0000
+2026-05-23T19:55:43,serial,serial,test_10mb.txt,10000000,231700,43.1593,18.555305,FAILED,0.5140,0,0,9999.0000
+2026-05-23T19:55:51,openmp,threads=4,test_10mb.txt,10000000,231730,43.1537,8.356075,FAILED,1.1413,0,0,9999.0000
+2026-05-23T19:55:56,openmp,threads=8,test_10mb.txt,10000000,231730,43.1537,4.188725,FAILED,2.2768,0,0,9999.0000
+2026-05-23T19:55:59,openmp,threads=16,test_10mb.txt,10000000,231730,43.1537,2.848778,FAILED,3.3477,0,0,9999.0000
+2026-05-23T19:56:08,pthread,threads=4,test_10mb.txt,10000000,231730,43.1537,7.207855,0.119829,1.3231,79.5863,100.0000,0.0000
+2026-05-23T19:56:14,pthread,threads=8,test_10mb.txt,10000000,231730,43.1537,5.021284,0.120355,1.8993,79.2384,100.0000,0.0000
+2026-05-23T19:56:19,pthread,threads=16,test_10mb.txt,10000000,231730,43.1537,3.569606,0.119048,2.6717,80.1084,100.0000,0.0000
+2026-05-23T19:56:34,mpi,procs=2,test_10mb.txt,10000000,231706,43.1581,13.995334,FAILED,0.6814,0,0,9999.0000
+2026-05-23T19:56:41,mpi,procs=4,test_10mb.txt,10000000,231712,43.1570,6.706760,FAILED,1.4220,0,0,9999.0000
+2026-05-23T19:56:41,mpi,procs

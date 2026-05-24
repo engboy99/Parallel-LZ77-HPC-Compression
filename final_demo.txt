@@ -1,0 +1,188 @@
+Script started on 2026-05-24 07:56:21+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mtree -L 2[27mtree -L 2
+[?2004l[34;42m.[0m
+├── [01;32mMakefile[0m
+├── [01;32mcompressed.lz77[0m
+├── [34;42mcuda[0m
+│   └── [01;32mcuda_lz77.cu[0m
+├── [34;42mdatasets[0m
+│   └── [34;42mtest_files[0m
+├── [01;32mfinal_demo.txt[0m
+├── [34;42mgraphs[0m
+│   ├── [01;32mgenerate_graphs.py[0m
+│   └── [34;42moutput_graphs[0m
+├── [34;42mhpc_env[0m
+│   ├── [34;42mbin[0m
+│   ├── [34;42minclude[0m
+│   ├── [34;42mlib[0m
+│   ├── [01;36mlib64[0m -> [34;42mlib[0m
+│   ├── [01;32mpyvenv.cfg[0m
+│   └── [34;42mshare[0m
+├── [01;32mhpc_project_full_log.txt[0m
+├── [34;42mhybrid[0m
+│   ├── [01;32mmpi_cuda_lz77.cu[0m
+│   ├── [01;32mmpi_openmp_lz77[0m
+│   └── [01;32mmpi_openmp_lz77.c[0m
+├── [34;42mmpi[0m
+│   ├── [01;32mmpi_lz77[0m
+│   └── [01;32mmpi_lz77.c[0m
+├── [01;32mmpi_compressed.lz77[0m
+├── [01;32mmpi_output.txt[0m
+├── [01;32momp_compressed.lz77[0m
+├── [01;32momp_output.txt[0m
+├── [34;42mopenmp[0m
+│   ├── [01;32mopenmp_lz77[0m
+│   └── [01;32mopenmp_lz77.c[0m
+├── [34;42moutput[0m
+│   ├── [34;42mbench_20260523_195346[0m
+│   └── [34;42mbench_20260523_195458[0m
+├── [01;32moutput.txt[0m
+├── [34;42mpthread[0m
+│   ├── [01;32mpthread_lz77[0m
+│   └── [01;32mpthread_lz77.c[0m
+├── [34;42mresults[0m
+├── [01;32msample.txt[0m
+├── [34;42mscripts[0m
+│   ├── [01;32mbenchmark.sh[0m
+│   ├── [01;32mbuild.ps1[0m
+│   ├── [01;32mcompare_accuracy.py[0m
+│   ├── [01;32mdatagen.py[0m
+│   ├── [34;42mdatasets[0m
+│   ├── [01;32mgenerate_test_data.py[0m
+│   └── [01;32mtest_lz77.sh[0m
+├── [34;42mserial[0m
+│   ├── [01;32mserial_lz77[0m
+│   └── [01;32mserial_lz77.c[0m
+├── [01;32mtest_results_20260523_195346.csv[0m
+└── [01;32mtest_results_20260523_195458.csv[0m
+
+23 directories, 32 files
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7m./serial/serial_lz77 sample.txt compressed.lz77[27m./serial/serial_lz77 sample.txt compressed.lz77
+[?2004lCompressing sample.txt to compressed.lz77...
+
+===== LZ77 Compression Results =====
+Implementation: Serial
+Input file: sample.txt
+Original size: 25 bytes (0.00 MB)
+Compressed size: 24 bytes (0.00 MB)
+Compression ratio: 1.04:1
+Number of tokens: 4
+Execution time: 0.0000 seconds
+Throughput: 70.12 MB/s
+====================================
+
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7m./serial/serial_lz77 compressed.lz77 output.txt [27m[7m-[27m[7m-decompress[27m[A]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ ./serial/serial_lz77 compressed.lz77 output.txt --decompress
+[?2004lDecompressing compressed.lz77 to output.txt...
+Decompression complete: 25 bytes
+Verification: PASSED ✓
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mexport OMP_NUM_THREADS=4[27mexport OMP_NUM_THREADS=4
+[?2004l[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7m./openmp/openmp_lz77 sample.txt omp_compressed.l[27m[7mz[27m[7m77[27m[A]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ ./openmp/openmp_lz77 sample.txt omp_compressed.lz77
+[?2004lCompressing sample.txt to omp_compressed.lz77...
+Compressing with 4 OpenMP threads...
+Thread 3 processing block 1/1 (100.0%)...
+
+===== LZ77 Compression Results =====
+Implementation: OpenMP Parallel
+Number of threads: 4
+Input file: sample.txt
+Original size: 25 bytes (0.00 MB)
+Compressed size: 24 bytes (0.00 MB)
+Compression ratio: 1.04:1
+Number of tokens: 4
+Execution time: 0.0011 seconds
+Throughput: 0.02 MB/s
+====================================
+
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7m./pthread/pthread_lz77 sample.txt pthread_output[27m[7m.[27m[7mlz77 4[27m[A]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ ./pthread/pthread_lz77 sample.txt pthread_output.lz77 4
+[?2004lCompressing sample.txt to pthread_output.lz77...
+Compressing with 1 POSIX threads...
+Block 1/1 completed (100.0%)...
+
+===== LZ77 Compression Results =====
+Implementation: POSIX Threads
+Number of threads: 1
+Input file: sample.txt
+Original size: 25 bytes (0.00 MB)
+Compressed size: 24 bytes (0.00 MB)
+Compression ratio: 1.04:1
+Number of tokens: 4
+Execution time: 0.0006 seconds
+Throughput: 0.04 MB/s
+====================================
+
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mmpirun -np 4 ./mpi/mpi_lz77 sample.txt mpi_outpu[27m[7mt[27m[7m.lz77[27m[A]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ mpirun -np 4 ./mpi/mpi_lz77 sample.txt mpi_output.lz77
+[?2004lCompressing sample.txt to mpi_output.lz77...
+Compressing with 4 MPI processes...
+Total data size: 25 bytes (0.00 MB)
+Rank 0 compressed 4 tokens
+
+===== LZ77 Compression Results =====
+Implementation: MPI Distributed
+Number of processes: 4
+Input file: sample.txt
+Original size: 25 bytes (0.00 MB)
+Compressed size: 132 bytes (0.00 MB)
+Compression ratio: 0.19:1
+Number of tokens: 22
+Execution time: 0.0002 seconds
+Throughput: 0.12 MB/s
+====================================
+
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mmpirun -np 2 ./hybrid/mpi_openmp_lz77 sample.txt[27m[7m [27m[7mhybrid_output.lz77[27m[A]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ mpirun -np 2 ./hybrid/mpi_openmp_lz77 sample.txt hybrid_output.lz77
+[?2004lCompressing sample.txt to hybrid_output.lz77...
+Hybrid compression: 2 MPI processes × 4 OpenMP threads
+Total data size: 25 bytes (0.00 MB)
+Rank 0 compressed 4 tokens
+Rank 1 compressed 4 tokens
+
+===== LZ77 Compression Results =====
+Implementation: MPI + OpenMP Hybrid
+Configuration: 2 processes × 4 threads
+Input file: sample.txt
+Original size: 25 bytes (0.00 MB)
+Compressed size: 48 bytes (0.00 MB)
+Compression ratio: 0.52:1
+Number of tokens: 8
+Execution time: 0.0003 seconds
+Throughput: 0.09 MB/s
+====================================
+
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mcat test_results_20260523_195458.csv[27mcat test_results_20260523_195458.csv
+[?2004ltimestamp,implementation,config,test_file,file_size_bytes,compressed_size_bytes,compression_ratio,compression_time_s,decompression_time_s,compress_throughput_mbps,decompress_throughput_mbps,accuracy_percent,rmse
+2026-05-23T19:55:00,serial,serial,test_1mb.txt,1000000,23206,43.0923,1.918097,FAILED,0.4972,0,0,9999.0000
+2026-05-23T19:55:02,openmp,threads=4,test_1mb.txt,1000000,23206,43.0923,1.656172,FAILED,0.5758,0,0,9999.0000
+2026-05-23T19:55:04,openmp,threads=8,test_1mb.txt,1000000,23206,43.0923,1.588404,0.079503,0.6004,11.9955,100.0000,0.0000
+2026-05-23T19:55:06,openmp,threads=16,test_1mb.txt,1000000,23206,43.0923,1.523765,FAILED,0.6259,0,0,9999.0000
+2026-05-23T19:55:08,pthread,threads=4,test_1mb.txt,1000000,23206,43.0923,1.936633,0.029953,0.4924,31.8390,100.0000,0.0000
+2026-05-23T19:55:10,pthread,threads=8,test_1mb.txt,1000000,23206,43.0923,1.900915,0.028357,0.5017,33.6310,100.0000,0.0000
+2026-05-23T19:55:16,pthread,threads=16,test_1mb.txt,1000000,23206,43.0923,4.746593,0.030183,0.2009,31.5964,100.0000,0.0000
+2026-05-23T19:55:18,mpi,procs=2,test_1mb.txt,1000000,23212,43.0812,1.695302,0.027958,0.5625,34.1110,100.0000,0.0000
+2026-05-23T19:55:19,mpi,procs=4,test_1mb.txt,1000000,23224,43.0589,1.315690,0.029721,0.7248,32.0876,100.0000,0.0000
+2026-05-23T19:55:19,mpi,procs=8,test_1mb.txt,1000000,0,0,FAILED,FAILED,0,0,0,9999.0000
+2026-05-23T19:55:21,mpi_openmp,procs=2,threads=4,test_1mb.txt,1000000,23224,43.0589,1.146641,FAILED,0.8317,0,0,9999.0000
+2026-05-23T19:55:22,mpi_openmp,procs=4,threads=2,test_1mb.txt,1000000,23224,43.0589,1.287210,FAILED,0.7409,0,0,9999.0000
+2026-05-23T19:55:24,mpi_openmp,procs=4,threads=4,test_1mb.txt,1000000,23224,43.0589,1.224857,FAILED,0.7786,0,0,9999.0000
+2026-05-23T19:55:43,serial,serial,test_10mb.txt,10000000,231700,43.1593,18.555305,FAILED,0.5140,0,0,9999.0000
+2026-05-23T19:55:51,openmp,threads=4,test_10mb.txt,10000000,231730,43.1537,8.356075,FAILED,1.1413,0,0,9999.0000
+2026-05-23T19:55:56,openmp,threads=8,test_10mb.txt,10000000,231730,43.1537,4.188725,FAILED,2.2768,0,0,9999.0000
+2026-05-23T19:55:59,openmp,threads=16,test_10mb.txt,10000000,231730,43.1537,2.848778,FAILED,3.3477,0,0,9999.0000
+2026-05-23T19:56:08,pthread,threads=4,test_10mb.txt,10000000,231730,43.1537,7.207855,0.119829,1.3231,79.5863,100.0000,0.0000
+2026-05-23T19:56:14,pthread,threads=8,test_10mb.txt,10000000,231730,43.1537,5.021284,0.120355,1.8993,79.2384,100.0000,0.0000
+2026-05-23T19:56:19,pthread,threads=16,test_10mb.txt,10000000,231730,43.1537,3.569606,0.119048,2.6717,80.1084,100.0000,0.0000
+2026-05-23T19:56:34,mpi,procs=2,test_10mb.txt,10000000,231706,43.1581,13.995334,FAILED,0.6814,0,0,9999.0000
+2026-05-23T19:56:41,mpi,procs=4,test_10mb.txt,10000000,231712,43.1570,6.706760,FAILED,1.4220,0,0,9999.0000
+2026-05-23T19:56:41,mpi,procs=8,test_10mb.txt,10000000,0,0,FAILED,FAILED,0,0,0,9999.0000
+2026-05-23T19:56:47,mpi_openmp,procs=2,threads=4,test_10mb.txt,10000000,231904,43.1213,6.589760,FAILED,1.4472,0,0,9999.0000
+2026-05-23T19:56:52,mpi_openmp,procs=4,threads=2,test_10mb.txt,10000000,231904,43.1213,4.263162,FAILED,2.2370,0,0,9999.0000
+2026-05-23T19:56:56,mpi_openmp,procs=4,threads=4,test_10mb.txt,10000000,231904,43.1213,3.991371,FAILED,2.3893,0,0,9999.0000
+2026-05-23T19:58:39,serial,serial,test_50mb.txt,50000000,1158346,43.1650,102.263205,FAILED,0.4663,0,0,9999.0000
+2026-05-23T19:59:06,openmp,threads=4,test_50mb.txt,50000000,1158472,43.1603,26.909146,FAILED,1.7720,0,0,9999.0000
+2026-05-23T19:59:25,openmp,threads=8,test_50mb.txt,50000000,1158472,43.1603,17.369909,FAILED,2.7452,0,0,9999.0000
+2026-05-23T19:59:38,openmp,threads=16,test_50mb.txt,50000000,1158472,43.1603,12.598744,FAILED,3.7848,0,0,9999.0000
+2026-05-23T20:00:18,pthread,threads=4,test_50mb.txt,50000000,1158472,43.1603,33.008540,0.534279,1.4446,89.2487,100.0000,0.0000
+2026-05-23T20:00:47,pthread,threads=8,test_50mb.txt,50000000,1158472,43.1603,22.535645,0.566854,2.1159,84.1199,100.0000,0.0000
+2026-05-23T20:01:13,pthread,threads=16,test_50mb.txt,50000000,1158472,43.1603,20.108578,0.539647,2.3713,88.3609,100.0000,0.0000
+[?2004h]0;prabhath@DESKTOP-TL3J772: /mnt/d/New folder (3)/HPC-Project---LZ77-main[01;32mprabhath@DESKTOP-TL3J772[00m:[01;34m/mnt/d/New folder (3)/HPC-Project---LZ77-main[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-05-24 07:57:43+05:30 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,8 @@
+hpc_env/
+__pycache__/
+*.pyc
+results/
+graphs/
+demo.log
+*.pdf
+*.html
